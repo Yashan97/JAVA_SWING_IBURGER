@@ -1,6 +1,7 @@
 package iburger;
 public class IburgerCollection {
     private Iburger[] iburgerArray = new Iburger[0]; // create Object Array 
+    private Iburger [] searchNumber =new Iburger[0]; 
     
     //Add order here
     public boolean  addOrder( Iburger iburger){
@@ -45,5 +46,28 @@ public class IburgerCollection {
     }
     
     //
+    public Iburger[] getSearchCustomerArray(String number){
+      
+        for (int i = 0; i <iburgerArray.length; i++) {
+            if (number.equalsIgnoreCase(iburgerArray[i].getNumber())) {
+              searchNumber =  extendSearchNumberArray(iburgerArray[i]);
+            }
+        }
+    
+        return  searchNumber;
+    }
+    public Iburger [] extendSearchNumberArray(Iburger number){
+        
+        Iburger []tempsearch = new Iburger[searchNumber.length+1];
+        for (int i = 0; i <searchNumber.length; i++) {
+            tempsearch[i] =searchNumber[i];
+        }
+        searchNumber = tempsearch;
+        searchNumber[searchNumber.length-1]= number;
+        return searchNumber;
+    
+    }
+    
+   
     
 } 
