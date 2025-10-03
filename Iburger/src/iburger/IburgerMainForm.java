@@ -48,6 +48,11 @@ public class IburgerMainForm extends javax.swing.JFrame {
         });
 
         btnViewOrder.setText("View Order");
+        btnViewOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewOrderActionPerformed(evt);
+            }
+        });
 
         btnSearchOrder.setText("Search Order");
         btnSearchOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +154,10 @@ public class IburgerMainForm extends javax.swing.JFrame {
     private void btnSearchCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustomerActionPerformed
         new SearchCustomerForm(iburgerCollection).setVisible(true);
     }//GEN-LAST:event_btnSearchCustomerActionPerformed
+
+    private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
+        new ViewOrderform(iburgerCollection).setVisible(true);
+    }//GEN-LAST:event_btnViewOrderActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
